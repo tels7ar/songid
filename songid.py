@@ -1,17 +1,8 @@
 #!/usr/bin/python3
 """
-call songrec on mp3s
+Call songrec on mp3s and rename files if match found.
 
-1. check if songrec is available
-2. take cmd line input (directory)
-3. check if cmd line input is valid (directory exists)
-4. for each mp3 file in directory:
-   a. run songrec on file
-   b. process json returned by songrec
-   c. if json includes artist/title, rename mp3 with them
-   d. find matching cdg file, rename to match
-   e. update mp3 id3 info to include artist/title.
-
+Also renames cdg files to match.
 """
 
 import json
@@ -24,7 +15,7 @@ from typing import Optional, Tuple
 
 class Songid:
     """
-    take an mp3 file and call songrec on it
+    take an mp3 file and call songrec on it.
     """
 
     def check_for_songrec(self) -> bool:
